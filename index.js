@@ -12,7 +12,7 @@ const server = http.createServer((req, res) => {
       if (err) throw err;
       res.end(data);
     });
-  } else if (req.url === '/submit') {
+  }else if (req.url === '/submit') {
     let body = '';
     req.on('data', chunk => {
       body += chunk.toString();
@@ -21,5 +21,6 @@ const server = http.createServer((req, res) => {
       res.statusCode = 200;
       res.setHeader('Content-Type', 'text/html');
       res.end(`<h1>Form submitted:</h1><p>${body}</p>`);
-    });
-
+});
+  } 
+}
